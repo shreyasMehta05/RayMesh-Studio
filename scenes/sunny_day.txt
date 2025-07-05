@@ -1,0 +1,36 @@
+# Sunny Day Scene
+# A simple ball under the sun placed on a green land
+
+# Camera setup: lookFromX lookFromY lookFromZ lookAtX lookAtY lookAtZ upX upY upZ fov
+camera 0 2 10 0 0 0 0 1 0 45
+
+# Background color: r g b (light blue sky)
+background 0.6 0.8 1.0
+
+# Lights: posX posY posZ colorR colorG colorB intensity
+light 5 10 5 1.0 0.9 0.7 1.5  # Warm sunlight from above
+
+# Reflections: enabled maxDepth
+reflections 1 3
+
+# Objects:
+# Green land (large flat box)
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box -20 -2 -20 20 -1.5 20 0.2 0.7 0.1 0.2 0.7 0.1 10 0.0
+
+# Ball (sphere in the center)
+# sphere: centerX centerY centerZ radius colorR colorG colorB ambient diffuse specular shininess reflectivity
+sphere 0 0 0 1.5 0.9 0.2 0.2 0.1 0.7 0.6 64 0.3  # Red-orange ball
+
+# Small decorative elements
+# Small flower stem (green vertical box)
+box 3 -1.5 2 3.1 0 2.1 0.2 0.8 0.2 0.1 0.7 0.1 10 0.0
+
+# Flower head (small colorful sphere)  
+sphere 3.05 0.3 2.05 0.4 1.0 0.3 0.8 0.2 0.8 0.2 10 0.0
+
+# Small stone (gray sphere partially buried)
+sphere -2 -1.2 1 0.5 0.6 0.6 0.6 0.2 0.7 0.4 20 0.1
+
+# Sun in the sky (distant yellow sphere)
+sphere 20 30 -30 5.0 1.0 0.9 0.0 0.8 0.9 0.8 128 0.0

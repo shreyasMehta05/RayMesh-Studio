@@ -1,0 +1,33 @@
+# Reflective Spheres Scene
+# Shows a composition of highly reflective spheres on a reflective surface
+
+# Camera setup: lookFromX lookFromY lookFromZ lookAtX lookAtY lookAtZ upX upY upZ fov
+camera 0 3 10 0 1 0 0 1 0 40
+
+# Background color: r g b
+background 0.05 0.05 0.1
+
+# Lights: posX posY posZ colorR colorG colorB intensity
+light 5 8 5 1.0 0.9 0.8 1.0   # Warm main light
+light -8 3 0 0.4 0.6 1.0 0.6  # Blue fill light
+
+# Reflections: enabled maxDepth
+reflections 1 5
+
+# Floor (reflective surface)
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box -10 -0.5 -10 10 -0.4 10 0.8 0.8 0.9 0.1 0.4 0.8 120 0.5
+
+# Metal spheres with different reflectivity values
+# sphere: centerX centerY centerZ radius colorR colorG colorB ambient diffuse specular shininess reflectivity
+sphere 0 1 0 1.0 0.9 0.9 0.9 0.1 0.3 1.0 120 0.9    # Silver sphere
+sphere -2.5 0.7 2 0.7 0.9 0.6 0.3 0.1 0.3 0.9 100 0.7  # Gold sphere
+sphere 2.5 0.6 2 0.6 0.3 0.4 0.8 0.1 0.4 0.8 80 0.6   # Blue sphere
+sphere 0 0.3 -3 0.7 0.8 0.2 0.6 0.1 0.5 0.7 60 0.5    # Green sphere
+sphere -2 0.5 -2 0.5 0.8 0.3 0.3 0.1 0.5 0.6 90 0.4   # Bronze sphere
+sphere 2 0.4 -1 0.4 0.3 0.9 0.7 0.1 0.6 0.5 70 0.3    # Purple sphere
+
+# Decorative non-reflective elements
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box -4 -0.4 -4 -3.5 0.5 -3.5 0.9 0.2 0.2 0.2 0.7 0.1 10 0.0    # Red column
+box 3.5 -0.4 -3.5 4 1.2 -3 0.2 0.8 0.2 0.2 0.7 0.1 10 0.0      # Green column

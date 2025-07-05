@@ -1,0 +1,33 @@
+# Cornell Box Scene
+# A classic ray tracing test scene with colored walls and simple geometry
+
+# Camera setup: lookFromX lookFromY lookFromZ lookAtX lookAtY lookAtZ upX upY upZ fov
+camera 0 0 4.5 0 0 0 0 1 0 60
+
+# Background color: r g b
+background 0.0 0.0 0.0
+
+# Lights: posX posY posZ colorR colorG colorB intensity
+light 0 1.9 0 1.0 1.0 1.0 2.0  # Ceiling light
+
+# Reflections: enabled maxDepth
+reflections 1 3
+
+# Room walls (boxes)
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+# White floor
+box -2 -2 -2 2 -1.98 2 0.9 0.9 0.9 0.2 0.8 0.0 10 0.0
+# White ceiling
+box -2 2 -2 2 1.98 2 0.9 0.9 0.9 0.2 0.8 0.0 10 0.0
+# White back wall
+box -2 -2 -2.05 2 2 -1.95 0.9 0.9 0.9 0.2 0.8 0.0 10 0.0
+# Red left wall
+box -2.05 -2 -2 -1.95 2 2 0.95 0.1 0.1 0.2 0.8 0.0 10 0.0
+# Green right wall
+box 1.95 -2 -2 2.05 2 2 0.1 0.95 0.1 0.2 0.8 0.0 10 0.0
+
+# Objects inside the box
+# sphere: centerX centerY centerZ radius colorR colorG colorB ambient diffuse specular shininess reflectivity
+sphere -0.8 -1.2 0.0 0.8 0.7 0.7 0.9 0.1 0.7 0.8 100 0.8  # Reflective sphere
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box 0.3 -2 -0.3 1.3 -0.5 0.7 0.9 0.8 0.6 0.1 0.8 0.2 20 0.1  # Wooden-like box

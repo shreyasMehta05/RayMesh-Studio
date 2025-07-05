@@ -1,0 +1,27 @@
+# Sample scene file for ray tracer
+# Format: <element_type> <parameters>
+
+# Camera setup: lookFromX lookFromY lookFromZ lookAtX lookAtY lookAtZ upX upY upZ fov
+camera 5 3 8 0 0 0 0 1 0 45
+
+# Background color: r g b
+background 0.1 0.3 0.6
+
+# Lights: posX posY posZ colorR colorG colorB intensity
+light 10 10 10 1.0 1.0 1.0 1.0
+light -7 3 5 0.7 0.5 0.5 0.6
+
+# Reflections: enabled maxDepth
+reflections 1 4
+
+# Objects:
+# sphere: centerX centerY centerZ radius colorR colorG colorB ambient diffuse specular shininess reflectivity
+sphere 0 0 0 1.0 1.0 0.3 0.3 0.1 0.7 0.5 32 0.0
+sphere 2 0.5 -1 0.5 0.3 0.8 0.2 0.1 0.7 0.6 64 0.8
+sphere -1.5 -0.5 -0.5 0.7 0.8 0.2 0.2 0.1 0.7 0.3 16 0.2
+
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box -5 -2 -5 5 -1.5 5 0.3 0.8 0.3 0.1 0.8 0.2 16 0.0
+
+# triangle: v0X v0Y v0Z v1X v1Y v1Z v2X v2Y v2Z colorR colorG colorB ambient diffuse specular shininess reflectivity
+triangle -3 0 -3 -1 2 -3 -2 0 -5 0.9 0.4 0.1 0.1 0.7 0.5 32 0.3

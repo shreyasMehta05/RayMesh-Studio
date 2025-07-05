@@ -1,0 +1,37 @@
+# Glass Prism Scene
+# Features a scene with transparent and semi-transparent objects
+
+# Camera setup: lookFromX lookFromY lookFromZ lookAtX lookAtY lookAtZ upX upY upZ fov
+camera 6 3 8 0 0 0 0 1 0 45
+
+# Background color: r g b
+background 0.2 0.3 0.5
+
+# Lights: posX posY posZ colorR colorG colorB intensity
+light 10 8 5 1.0 1.0 1.0 0.9     # Main light
+light -5 3 -5 0.6 0.8 1.0 0.4     # Blue accent light
+light 0 0 8 1.0 0.6 0.4 0.3       # Warm fill light
+
+# Reflections: enabled maxDepth
+reflections 1 6
+
+# Floor
+# box: minX minY minZ maxX maxY maxZ colorR colorG colorB ambient diffuse specular shininess reflectivity
+box -15 -2 -15 15 -1.9 15 0.7 0.7 0.8 0.1 0.8 0.2 20 0.0
+
+# Glass prism (tetrahedron using triangles)
+# triangle: v0X v0Y v0Z v1X v1Y v1Z v2X v2Y v2Z colorR colorG colorB ambient diffuse specular shininess reflectivity
+triangle 0 1 0 2 -2 2 -2 -2 2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+triangle 0 1 0 -2 -2 2 -2 -2 -2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+triangle 0 1 0 -2 -2 -2 2 -2 -2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+triangle 0 1 0 2 -2 -2 2 -2 2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+triangle 2 -2 2 -2 -2 2 -2 -2 -2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+triangle 2 -2 2 -2 -2 -2 2 -2 -2 0.9 0.9 1.0 0.1 0.2 0.9 128 0.8
+
+# Colored reflective spheres surrounding the prism
+# sphere: centerX centerY centerZ radius colorR colorG colorB ambient diffuse specular shininess reflectivity
+sphere -3 0 -3 1.0 0.9 0.2 0.2 0.1 0.7 0.6 64 0.3    # Red sphere
+sphere 3 0 -3 1.0 0.2 0.9 0.2 0.1 0.7 0.6 64 0.3     # Green sphere
+sphere 0 0 -5 1.0 0.2 0.2 0.9 0.1 0.7 0.6 64 0.3     # Blue sphere
+sphere -4 0 0 1.0 0.9 0.6 0.1 0.1 0.7 0.6 64 0.3     # Yellow sphere
+sphere 4 0 0 1.0 0.9 0.1 0.9 0.1 0.7 0.6 64 0.3      # Purple sphere
